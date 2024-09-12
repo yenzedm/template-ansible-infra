@@ -1,0 +1,8 @@
+roles/
+templates/scripts/
+group_vars/astra.yml
+group_vars/ubuntu.yml
+group_vars/windows10.yml
+inventory/astra.yml
+inventory/ubuntu.yml
+inventory/windows10.yml

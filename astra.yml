@@ -1,0 +1,6 @@
+---
+- hosts: astra
+  vars_files:
+    - group_vars/astra.yml
+  roles:
+    - { role: 'install_zabbix_agent2_astra' }
