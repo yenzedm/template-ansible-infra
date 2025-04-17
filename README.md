@@ -4,9 +4,9 @@
 infra_name/  
 ├── ansible.cfg  
 ├── group_vars/  
-│   └── groupname/  
+│   └── groupname.yml  
 ├── host_vars/  
-│   └── hostname/  
+│   └── hostname.yml  
 ├── inventory/  
 ├── roles/  
 ├── templates/  
