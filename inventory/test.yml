@@ -1,19 +1,10 @@
 test_win:
   hosts:
-    10.0.0.48:
+    app:
       ansible_host: 10.0.0.48
-      ansible_user: user
-      ansible_password: user
-      ansible_port: 5985
-      ansible_connection: winrm
-      ansible_winrm_transport: ntlm
-      ansible_winrm_server_cert_validation: ignore
 test_lin:
   hosts:
-    test_ubuntu:
+    test:
       ansible_host: 192.168.1.100 
-        #      ansible_user: user
-        #      ansible_password: user
       ansible_become: yes
       ansible_become_method: sudo
-        #      ansible_become_pass: user

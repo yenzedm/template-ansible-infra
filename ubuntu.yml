@@ -1,7 +1,0 @@
----
-- hosts: ubuntu
-  vars_files:
-    - group_vars/ubuntu.yml
-  roles:
-    - { role: 'install_zabbix_agent2_ubuntu' }
-#    - { role: 'uninstall_zabbix_agent2_deb_based_system' }
