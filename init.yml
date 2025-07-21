@@ -8,9 +8,9 @@
         path: "roles"
         state: directory
 
-    - name: clone the git repository into the roles directory
+    - name: clone the git public repository into the roles directory
       git:
-        repo: 'repo url'
+        repo: 'repo url'  !!!
         dest: "roles"
         version: master
         force: yes
@@ -20,22 +20,23 @@
         path: "files"
         state: directory
 
-    - name: clone the git repository into the files directory
+    - name: clone the git private repository into the files directory
       git:
-        repo: 'repo url'
+        repo: 'repo url'  !!!
         dest: "files"
         version: master
-        forse: yes
+        accept_hostkey: yes
+      vars:
+        ansible_ssh_private_key_file: /path/to/ssh-key !!!
 
     - name: ensure playbooks directory exists
       file:
         path: "playbooks"
         state: directory
 
-    - name: clone the git repository into the playbooks directory
+    - name: clone the git public repository into the playbooks directory
       git:
-        repo: 'repo url'
+        repo: 'repo url'  !!!
         dest: "playbooks"
         version: master
-        forse: yes
-
+        force: yes
