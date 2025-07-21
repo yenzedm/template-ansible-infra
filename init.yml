@@ -1,5 +1,5 @@
 ---
-- name: clone git repository to roles directory
+- name: cloning personal repositories templates, files, roles and playbooks
   hosts: localhost
   gather_facts: no
   tasks:
@@ -8,35 +8,47 @@
         path: "roles"
         state: directory
 
-    - name: clone the git public repository into the roles directory
+    - name: clone the public git repository into the roles directory
       git:
         repo: 'repo url'  !!!
         dest: "roles"
         version: master
         force: yes
 
-    - name: ensure files directory exists
-      file:
-        path: "files"
-        state: directory
-
-    - name: clone the git private repository into the files directory
-      git:
-        repo: 'repo url'  !!!
-        dest: "files"
-        version: master
-        accept_hostkey: yes
-      vars:
-        ansible_ssh_private_key_file: /path/to/ssh-key !!!
-
     - name: ensure playbooks directory exists
       file:
         path: "playbooks"
         state: directory
 
-    - name: clone the git public repository into the playbooks directory
+    - name: clone the public git repository into the playbooks directory
       git:
         repo: 'repo url'  !!!
         dest: "playbooks"
         version: master
         force: yes
+
+    - name: ensure playbooks/templates directory exists
+      file:
+        path: "playbooks/templates"
+        state: directory
+
+    - name: clone the public git repository into the playbooks/templates directory
+      git:
+        repo: 'repo url'  !!!
+        dest: "playbooks/templates"
+        version: master
+        force: yes
+
+    - name: ensure playbooks/files directory exists
+      file:
+        path: "playbooks/files"
+        state: directory
+
+    - name: clone the private git repository into the playbooks/files directory
+      git:
+        repo: 'repo url'  !!!
+        dest: "playbooks/files"
+        version: master
+        accept_hostkey: yes
+      vars:
+        ansible_ssh_private_key_file: path/to/private/ssh/key  !!!

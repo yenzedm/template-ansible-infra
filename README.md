@@ -1,8 +1,25 @@
 ### 📁 Ansible Project Structure
 
-
-![ansible directory structure](ansible-dirs.jpg)
-
+```
+template-ansible-infra
+├── inventory
+│   ├── inventory.yml
+│   ├── group_vars
+│   │   └── files with variables specific to groups of hosts
+│   └── host_vars
+│       └── files with variables specific to individual hosts
+├── playbooks
+│   ├── ansible playbooks with tasks
+│   ├── files
+│   │   └── files to be used or deployed by playbooks
+│   └── templates
+│       └── jinja2 templates for conf files
+├── roles
+│   └── organizing playbooks into roles
+├── ansible.cfg
+├── init.yml clone personal files, templates, playbooks and roles
+└── ansible playbooks with roles
+```
 ---
 
 #### `init.yml`  
@@ -10,9 +27,3 @@ An initialization playbook — typically used to prepare a base environment or s
 ```bash
 ansible-playbook init.yml
 ```
-
----
-
-#### `.gitignore`  
-Specifies which files/folders should be ignored by version control (Git).
-
