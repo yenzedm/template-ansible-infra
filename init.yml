@@ -10,7 +10,32 @@
 
     - name: clone the git repository into the roles directory
       git:
-        repo: 'git@github.com:yenzedm/ansible-roles.git'
+        repo: 'repo url'
         dest: "roles"
         version: master
         force: yes
+
+    - name: ensure files directory exists
+      file:
+        path: "files"
+        state: directory
+
+    - name: clone the git repository into the files directory
+      git:
+        repo: 'repo url'
+        dest: "files"
+        version: master
+        forse: yes
+
+    - name: ensure playbooks directory exists
+      file:
+        path: "playbooks"
+        state: directory
+
+    - name: clone the git repository into the playbooks directory
+      git:
+        repo: 'repo url'
+        dest: "playbooks"
+        version: master
+        forse: yes
+
