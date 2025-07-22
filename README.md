@@ -17,7 +17,7 @@ template-ansible-infra
 ├── roles
 │   └── organizing playbooks into roles
 ├── ansible.cfg
-├── init.yml clone personal files, templates, playbooks and roles
+├── init.yml clone personal files, inventory, templates, playbooks and roles
 └── ansible playbooks with roles
 ```
 ---
