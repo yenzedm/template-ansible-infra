@@ -52,3 +52,17 @@
         accept_hostkey: yes
       vars:
         ansible_ssh_private_key_file: path/to/private/ssh/key  !!!
+
+    - name: ensure inventory directory exists
+      file:
+        path: "inventory"
+        state: directory
+
+    - name: clone the private git repository into the inventory directory
+      git:
+        repo: 'repo url'  !!!
+        dest: "inventory"
+        version: master
+        accept_hostkey: yes
+      vars:
+        ansible_ssh_private_key_file: path/to/private/ssh/key  !!!
